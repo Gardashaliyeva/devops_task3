@@ -20,6 +20,8 @@
 
 - name: Create MySQL user
   win_shell: |
-    mysql -u root -p'{{ db_root_password }}' -e "CREATE USER '{{ db_user }}'@'%' IDENTIFIED BY '{{ db_password }}'; GRANT ALL PRIVILEGES ON '{{ db_name }}'.* TO '{{ db_user }}'@'%'; FLUSH PRIVILEGES;"
+    mysql -u root -e "CREATE USER '{{ db_user }}'@'%' IDENTIFIED BY '{{ db_password }}'; GRANT ALL PRIVILEGES ON '{{ db_name }}'.* TO '{{ db_user }}'@'%'; >
+  environment:
+    MYSQL_PWD: "{{ db_root_password }}"
   args:
     executable: cmd
