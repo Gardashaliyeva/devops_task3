@@ -18,8 +18,8 @@
   args:
     executable: cmd
 
-#- name: Create MySQL user
-#  win_shell: |
-#    mysql -u root -p'{{ db_root_password }}' -e "CREATE USER '{{ db_user }}'@'%' IDENTIFIED BY '{{ db_password }}'; GRANT ALL PRIVILEGES ON '{{ db_name }}'.* TO '{{ db_user }}'@'%'; FLUSH PRIVILEGES;"
-#  args:
-#    executable: cmd
+- name: Create MySQL user
+  win_shell: |
+    mysql -u root -p'{{ db_root_password }}' -e "CREATE USER '{{ db_user }}'@'%' IDENTIFIED BY '{{ db_password }}'; GRANT ALL PRIVILEGES ON '{{ db_name }}'.* TO '{{ db_user }}'@'%'; FLUSH PRIVILEGES;"
+  args:
+    executable: cmd
