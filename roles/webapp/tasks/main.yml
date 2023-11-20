@@ -1,0 +1,26 @@
+---
+- name: Copy the web application files from Windows
+  win_copy:
+    src: "/mnt/c/Users/Ilaha Gardashaliyeva/Desktop/student-management-system"
+    dest: Projects/student-management-system
+
+- name: Install npm dependencies
+  community.general.npm:
+    path: Projects/student-management-system
+
+- name: Build Docker image
+  community.docker.docker_image:
+    build:
+      path: "{{ playbook_dir }}/roles/webapp/files/Dockerfile"
+    name: mynodeapp
+    state: build
+
+- name: Run Docker container
+  community.docker.docker_container:
+    name: mynodeapp_container
+    image: mynodeapp
+    state: started
+    ports:
+      - "80:3000"
+    env:
+      DATABASE_URL: "mysql://{{ db_user }}:{{ db_root_password }}@localhost/{{ db_name }}"

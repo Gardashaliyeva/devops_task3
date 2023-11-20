@@ -1,0 +1,25 @@
+---
+- name: Install MySQL
+  win_chocolatey: 
+    name: mysql
+    state: present
+
+- name: Start MySQL service
+  win_service:
+    name: MySQL80
+    state: started
+    start_mode: auto
+
+- name: Create MySQL database
+  win_shell: |
+    mysql -u root -e "CREATE DATABASE IF NOT EXISTS {{ db_name }};"
+  environment:
+    MYSQL_PWD: "{{ db_root_password }}"
+  args:
+    executable: cmd
+
+#- name: Create MySQL user
+#  win_shell: |
+#    mysql -u root -p'{{ db_root_password }}' -e "CREATE USER '{{ db_user }}'@'%' IDENTIFIED BY '{{ db_password }}'; GRANT ALL PRIVILEGES ON '{{ db_name }}'.* TO '{{ db_user }}'@'%'; FLUSH PRIVILEGES;"
+#  args:
+#    executable: cmd

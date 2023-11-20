@@ -1,0 +1,27 @@
+---
+- hosts: windows
+  pre_tasks:
+    - name: Include secret variables from Vault
+      include_vars:
+        file: secrets.yml
+      no_log: false
+
+  roles:
+    - role: database
+      vars:
+        db_name: "{{ db_name }}"
+        db_user: "{{ db_user }}"
+      environment:
+        MYSQL_PWD: "{{ db_root_password }}"
+    - role: webapp
+
+  tasks:
+    - name: Ensure Chocolatey is installed (for package management)
+      win_chocolatey:
+       name: chocolatey
+       state: present
+
+    - name: Install MySQL on Windows
+      win_chocolatey:
+        name: mysql
+        state: present
