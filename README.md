@@ -21,7 +21,7 @@ The project structure encompassed the following directories:
 
 ![image](https://github.com/Gardashaliyeva/devops_task3/assets/94057319/2673c196-6c30-4504-9c5f-d351941ebca7)
 
-![image](https://github.com/Gardashaliyeva/devops_task3/assets/94057319/b0e5cf90-4817-47a2-b3c2-27ae76bffd07)
+![image](https://github.com/Gardashaliyeva/devops_task3/assets/94057319/e4d4ae61-053c-478f-99fc-d83da8de5aac)
 
 The organizational structure ensured that:
 
