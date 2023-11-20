@@ -11,6 +11,7 @@
       vars:
         db_name: "{{ db_name }}"
         db_user: "{{ db_user }}"
+        db_password: "{{ db_passowrd }}"
       environment:
         MYSQL_PWD: "{{ db_root_password }}"
     - role: webapp
