@@ -38,6 +38,7 @@ The organizational structure ensured that:
 - MySQL was installed using Chocolatey.
 - The MySQL service was initiated.
 - A MySQL database was created.
+- A MySQL user was created.
 
 ### Web Application Role (`roles/webapp`)
 
@@ -59,7 +60,7 @@ The organizational structure ensured that:
 
    - Begin by cloning this project repository to your local machine. You can use the following command in your terminal:
     
-     `git clone <repository_url>`
+     `git clone https://github.com/Gardashaliyeva/devops_task3.git`
 
 **2. Customize the Inventory File**
 
@@ -67,7 +68,7 @@ The organizational structure ensured that:
    - Replace <target_machine_ip> with the actual IP address or hostname of the target machine where you want to deploy the web application and database.
    - Save and close the inventory file after making the necessary changes.
    - Encrypt Sensitive Information using Ansible Vault. To create a new Ansible Vault-encrypted file, run the following command in the project directory:
-     `ansible-vault create secret.yml`
+     `ansible-vault create secrets.yml`
    - You will be prompted to enter and confirm a vault password. Remember this password as you will need it to access the encrypted secrets.
    - Enter your sensitive information in the file. For example, if you need to specify database credentials, you can do so like this:
      
