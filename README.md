@@ -19,24 +19,9 @@ The project objectives that were successfully achieved are follows:
 
 The project structure encompassed the following directories:
 
-```
-ansible-project/
-│
-├── roles/
-│   ├── database/
-|       |__ tasks/
-|          |__ main.yml
-│   ├── webapp/
-|       |__ tasks/
-|       |  |__ main.yml
-|       |__ files/
-|          |__ Dockerfile
-│
-├── playbook.yml
-├── inventory
-├── ansible.cfg
-└── secret.yml
-```
+![image](https://github.com/Gardashaliyeva/devops_task3/assets/94057319/2673c196-6c30-4504-9c5f-d351941ebca7)
+
+![image](https://github.com/Gardashaliyeva/devops_task3/assets/94057319/b0e5cf90-4817-47a2-b3c2-27ae76bffd07)
 
 The organizational structure ensured that:
 
